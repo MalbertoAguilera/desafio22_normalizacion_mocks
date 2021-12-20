@@ -1,26 +1,65 @@
-[
-  {
-    "user": "Matias",
-    "content": "Hola",
-    "id": 1,
-    "date": "13/11/2021 12:59:33"
-  },
-  {
-    "user": "Leandro",
-    "content": "Como estas?",
-    "id": 2,
-    "date": "13/11/2021 13:02:41"
-  },
-  {
-    "user": "Matias",
-    "content": "Sufriendo con WebSockets, vos?",
-    "id": 3,
-    "date": "13/11/2021 13:02:41"
-  },
-  {
-    "user": "Leandro",
-    "content": "\t(-_-)",
-    "id": 4,
-    "date": "13/11/2021 13:16:20"
-  }
-]
+{
+  "id": "mensajes",
+  "mensajes": [
+    {
+      "author": {
+        "id": "m.albertoaguilera@gmail.com",
+        "nombre": "Matias Alberto",
+        "apellido": "Aguilera",
+        "edad": "33",
+        "avatar": "https://picsum.photos/50",
+        "alias": "Matt",
+        "date": "20/12/2021 19:36:39"
+      },
+      "text": "HOLA MUNDO"
+    },
+    {
+      "author": {
+        "id": "nataliaurriste@hotmail.com",
+        "nombre": "Natalia",
+        "apellido": "Urriste",
+        "edad": "37",
+        "avatar": "https://picsum.photos/50",
+        "alias": "Nati",
+        "date": "20/12/2021 19:36:39"
+      },
+      "text": "Hola!!!"
+    },
+    {
+      "author": {
+        "id": "m.albertoaguilera@gmail.com",
+        "nombre": "Matias Alberto",
+        "apellido": "Aguilera",
+        "edad": "33",
+        "avatar": "https://picsum.photos/50",
+        "alias": "Matt",
+        "date": "20/12/2021 19:40:43"
+      },
+      "text": "aca vamos de nuevo"
+    },
+    {
+      "author": {
+        "id": "nataliaurriste@hotmail.com",
+        "nombre": "Natalia",
+        "apellido": "Urriste",
+        "edad": "37",
+        "avatar": "https://picsum.photos/50",
+        "alias": "Nati",
+        "date": "20/12/2021 19:40:43"
+      },
+      "text": "Al menos hasta aca funciona"
+    },
+    {
+      "author": {
+        "id": "m.albertoaguilera@gmail.com",
+        "nombre": "Matias Alberto",
+        "apellido": "Aguilera",
+        "edad": "33",
+        "avatar": "https://picsum.photos/50",
+        "alias": "Matt",
+        "date": "20/12/2021 19:42:54"
+      },
+      "text": "Ahora la parte de faker"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 //configuracion websocket
 const express = require("express");
+const res = require("express/lib/response");
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
@@ -12,11 +13,16 @@ const filePathProducts = "./db/productos.txt";
 const filePathMessages = "./db/messages.txt";
 const handlerProducts = new Contenedor(filePathProducts);
 const handlerMessages = new Message(filePathMessages);
+const generarUsuarios = require("./utils/generarUsuarios");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + "/public"));
+
+app.get("/api/productos-test", (req, res)=>{
+  res.json(generarUsuarios());
+})
 
 //websocket
 //abre canal de parte del servidor
