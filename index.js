@@ -8,12 +8,12 @@ const io = require("socket.io")(server);
 // FIN configuracion websocket
 const PORT = 3000 || process.env.PORT;
 const Contenedor = require("./class/Contenedor");
-const Message = require("./class/Message");
 const filePathProducts = "./db/productos.txt";
 const filePathMessages = "./db/messages.txt";
 const handlerProducts = new Contenedor(filePathProducts);
-const handlerMessages = new Message(filePathMessages);
+const handlerMessages = new Contenedor(filePathMessages);
 const generarUsuarios = require("./utils/generarUsuarios");
+const listarMensajesNormalizados = require("./utils/listarMensajesNormalizados");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -40,12 +40,12 @@ io.on("connection", async (socket) => {
   //FIN Socket PRODUCTOS
 
   //Socket MENSAJES
-  socket.emit("server_sendMessages", await handlerMessages.getAllMessages());
+  socket.emit("server_sendMessages", listarMensajesNormalizados(await handlerMessages.getAll()));
 
   socket.on("client_newMessage", async (objmessage) => {
     
     await handlerMessages.save(objmessage);
-    io.emit("server_sendMessages", await handlerMessages.getAllMessages());
+    io.emit("server_sendMessages", listarMensajesNormalizados(await handlerMessages.getAll()));
   })
 
 
